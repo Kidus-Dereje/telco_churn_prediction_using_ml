@@ -5,6 +5,3 @@ scikit-learn
 joblib
 matplotlib
 seaborn
-jupyter
-notebook
-ipykernel
