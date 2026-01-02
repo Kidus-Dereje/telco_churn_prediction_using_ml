@@ -66,11 +66,11 @@ def load_models():
     """Load trained models and scaler"""
     try:
         # Load models
-        lr_model = joblib.load('../models/logistic_regression_model.joblib')
-        scaler = joblib.load('../models/scaler.joblib')
+        lr_model = joblib.load('models/logistic_regression_model.joblib')
+        scaler = joblib.load('models/scaler.joblib')
         
         # Load selected features
-        with open('../models/selected_features.pkl', 'rb') as f:
+        with open('models/selected_features.pkl', 'rb') as f:
             selected_features = pickle.load(f)
         
         st.sidebar.success("✅ Models loaded successfully!")
@@ -436,7 +436,7 @@ else:
     # Show error message if models didn't load
     st.error("""
     ⚠️ Models could not be loaded. Please ensure:
-    1. The model files exist in the `../models/` directory
+    1. The model files exist in the `models/` directory
     2. Files are named correctly:
        - `logistic_regression_model.joblib`
        - `random_forest_model.joblib`
@@ -448,9 +448,9 @@ else:
     # Debug information
     with st.expander("Debug Information"):
         st.write("Current directory:", Path.cwd())
-        st.write("Models directory:", Path('../models').resolve())
+        st.write("Models directory:", Path('models').resolve())
         try:
-            files = list(Path('../models').glob('*'))
+            files = list(Path('models').glob('*'))
             st.write("Files in models directory:", [f.name for f in files])
         except:
             st.write("Could not list files in models directory")
