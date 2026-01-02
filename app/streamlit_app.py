@@ -78,7 +78,7 @@ def load_models():
         
     except Exception as e:
         st.sidebar.error(f"❌ Error loading models: {e}")
-        return None, None, None, None
+        return None, None, None
 
 # Load models
 lr_model, scaler, selected_features = load_models()
